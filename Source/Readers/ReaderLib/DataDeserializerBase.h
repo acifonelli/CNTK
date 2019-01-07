@@ -29,6 +29,9 @@ public:
         return m_streams;
     }
 
+    // Streams this data deserializer can produce.
+    std::vector<StreamInformation> m_streams;
+
 protected:
     virtual bool GetSequenceInfoByKey(const SequenceKey&, SequenceInfo&)
     {
@@ -36,9 +39,6 @@ protected:
     }
 
     bool GetSequenceInfoByKey(const Index& index, const SequenceKey& key, SequenceInfo& r);
-
-    // Streams this data deserializer can produce.
-    std::vector<StreamInformation> m_streams;
 
     // Flag, indicating if the deserializer is primary.
     const bool m_primary;
